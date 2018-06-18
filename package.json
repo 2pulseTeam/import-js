@@ -17,7 +17,9 @@
     "prepublish": "npm run clean && npm run build",
     "preversion": "npm run clean && npm run build && npm test",
     "test": "npm run --silent lint && npm run --silent flow && npm run --silent jest",
-    "test:cover": "npm run --silent lint && npm run --silent flow && npm run --silent jest:cover"
+    "test:cover": "npm run --silent lint && npm run --silent flow && npm run --silent jest:cover",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -76,8 +78,9 @@
     "lodash.uniqby": "^4.2.1",
     "minimatch": "^3.0.0",
     "semver": "^5.1.0",
-    "sqlite3": "^3.1.8",
-    "winston": "^2.3.1"
+    "sqlite3": "^4.0.0",
+    "winston": "^2.3.1",
+    "snyk": "^1.83.0"
   },
   "jest": {
     "automock": false,
@@ -87,5 +90,6 @@
       "<rootDir>/build/",
       "<rootDir>/node_modules/"
     ]
-  }
+  },
+  "snyk": true
 }
